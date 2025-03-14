@@ -1,4 +1,6 @@
-import os, socket
+import os
+import socket
+
 
 def is_using_proxy(address, port):
     try:
@@ -6,6 +8,7 @@ def is_using_proxy(address, port):
         return True
     except Exception as e:
         return False
+
 
 if is_using_proxy("127.0.0.1", "7890"):
     print("""
@@ -19,7 +22,7 @@ if is_using_proxy("127.0.0.1", "7890"):
 from .api import PoeApi
 from .async_api import AsyncPoeApi
 from .example import PoeExample
-
 from .llm import LLM_PACKAGE
+
 if LLM_PACKAGE:
     from .llm import PoeServer
